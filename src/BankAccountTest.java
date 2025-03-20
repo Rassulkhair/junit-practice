@@ -43,7 +43,7 @@ public class BankAccountTest {
     @Test
     public void shouldReturnNullAmountWhenNotActive() {
         BankAccount account = new BankAccount("a", "b");
-        IllegalStateException thrown = assertThrows(IllegalStateException.class, () -> account.getAmount());
+        IllegalStateException thrown = assertThrows(IllegalStateException.class, account::getAmount);
 
         assertEquals("Счёт не активирован.", thrown.getMessage());
         assertNull(account.getCurrency());
